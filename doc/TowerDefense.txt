@@ -1,0 +1,25 @@
+Tower Defense
+=============
+
+Entscheidung:
+- Weg wird auf Karte generiert
+
+
+Entites
+=======
+Spieler
+	Geld / Credits
+Spielfeld
+Weg
+Gegner
+	Energie
+	Geschwindigkeit
+Türme
+	Stärke
+	Waffen
+	Reichweite
+	Angriffsart
+	Geschwindigkeit
+Munition
+Festung
+	Energie
