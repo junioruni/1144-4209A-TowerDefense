@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace TowerDefense.Models
 {
-    public class Spielfeld
+    public class Spielfeld : PictureBox
     {        
-        public List<Weg> WegAbschnitte { get; set; }
-
-        public Spielfeld()
-        {
-            WegAbschnitte = new List<Weg>();
-        }
+        
     }
 }
