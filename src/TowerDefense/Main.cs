@@ -16,10 +16,16 @@ namespace TowerDefense
         {
             InitializeComponent();
 
-            Spielfeld spielfeld = new Spielfeld();
+            Width = 1000;
+            Height = 800;
 
-            Weg weg = new Weg();
-            spielfeld.WegAbschnitte.Add(weg);            
+            // Spielfeld erstellen und die Größe des Formulars übergeben.
+            // [MB]
+            Spielfeld spielfeld = new Spielfeld(Width, Height);
+
+            // Spielfeld auf dem Formular anzeigen.
+            // [PP]
+            Controls.Add(spielfeld);           
         }
     }
 }
