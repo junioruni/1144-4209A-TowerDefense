@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -16,7 +13,7 @@ namespace TowerDefense.Models
             Width = breite;
             Height = hoehe;
 
-            ImageLocation = 
+            ImageLocation =
                 Environment.CurrentDirectory + @"\Images\GrassTexture.jpg";
         }
     }
