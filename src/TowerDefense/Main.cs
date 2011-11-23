@@ -14,6 +14,7 @@ namespace TowerDefense
     {
         public Enemy SingleEnemy { get; set; }
         public Weg AktuellerWeg { get; set; }
+        Spielfeld spielfeld;
 
         public Main()
         {
@@ -24,7 +25,7 @@ namespace TowerDefense
 
             // Spielfeld erstellen und die Größe des Formulars übergeben.
             // [MB]
-            Spielfeld spielfeld = new Spielfeld(Width, Height);
+            spielfeld = new Spielfeld(Width, Height);
 
             // Spielfeld auf dem Formular anzeigen.
             // [PP]
@@ -47,16 +48,42 @@ namespace TowerDefense
 
 
             var nextWaypoint = AktuellerWeg.GetNextFieldToMove();
-            SingleEnemy = new Enemy() { Left = nextWaypoint.X, Top = nextWaypoint.Y + 10, BackColor = Color.Transparent };
+
+            SingleEnemy =
+                new Enemy
+                    {
+                        Left = nextWaypoint.X,
+                        Top = nextWaypoint.Y + 10,
+                        BackColor = Color.Transparent
+                    };
+
             spielfeld.Controls.Add(SingleEnemy);
             SingleEnemy.BringToFront();
+            
+            spielfeld.MouseClick += spielfeld_MouseClick;
+        }
+
+        void spielfeld_MouseClick(object sender, MouseEventArgs e)
+        {
+            var neuerTurm =
+                new Turm
+                    {
+                        Left = (int) Math.Floor((double) e.X/60)*60,
+                        Top = (int) Math.Floor((double) e.Y/60)*60,
+                        BackColor = Color.Transparent
+                    };
+
+            spielfeld.Controls.Add(neuerTurm);
+            neuerTurm.BringToFront();
         }
 
         private void BtWeiter_Click(object sender, EventArgs e)
         {
             SingleEnemy.WegpunktIndex++;
 
-            var nextWaypoint = AktuellerWeg.GetNextFieldToMove(SingleEnemy.WegpunktIndex);
+            var nextWaypoint = 
+                AktuellerWeg.GetNextFieldToMove(SingleEnemy.WegpunktIndex);
+            
             SingleEnemy.Left = nextWaypoint.X;
             SingleEnemy.Top = nextWaypoint.Y + 10;
         }

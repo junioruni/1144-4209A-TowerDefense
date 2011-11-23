@@ -18,7 +18,12 @@ namespace TowerDefense.Models
 
         List<FieldInfo> ListeAllerFelder { get; set; }
 
-        public Weg(Control.ControlCollection spielfeldControls, int feldBreite, int feldHoehe, int startfeldX, int startfeldY)
+        public Weg(
+            Control.ControlCollection spielfeldControls, 
+            int feldBreite, 
+            int feldHoehe, 
+            int startfeldX, 
+            int startfeldY)
         {
             SpielFeldControls = spielfeldControls;
             FeldBreite = feldBreite;
@@ -45,7 +50,12 @@ namespace TowerDefense.Models
                 YCoord = neuesFeldY
             });
 
-            SpielFeldControls.Add(new WegStueck() { Top = FeldHoehe * neuesFeldY, Left = FeldBreite * neuesFeldX });
+            SpielFeldControls.Add(
+                new WegStueck
+                    {
+                        Top = FeldHoehe*neuesFeldY,
+                        Left = FeldBreite*neuesFeldX
+                    });
 
             LetzteXKoordinate = neuesFeldX;
             LetzteYKoordinate = neuesFeldY;
@@ -58,12 +68,15 @@ namespace TowerDefense.Models
 
         public Point GetNextFieldToMove(int listenIndex)
         {
-            if ((listenIndex < 0) || ((ListeAllerFelder.Count - 1) < listenIndex))
+            if  (listenIndex < 0 ||
+                (ListeAllerFelder.Count - 1) < listenIndex)
+            {
                 listenIndex = 0;
+            }
 
             var cur = ListeAllerFelder[listenIndex];
 
-            return new Point()
+            return new Point
             {
                 X = cur.XCoord * FeldBreite,
                 Y = cur.YCoord * FeldHoehe

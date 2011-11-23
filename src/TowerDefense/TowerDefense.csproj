@@ -55,7 +55,13 @@
     <Compile Include="Models\Enemy.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Models\Schuss.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\Spielfeld.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Turm.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Models\Weg.cs" />
@@ -94,6 +100,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\PathSegment.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Shot.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Tower60_Blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
