@@ -46,15 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Definitions\StaticContainer.cs" />
+    <Compile Include="Ebenen\SpielfeldLogik.cs" />
+    <Compile Include="Logic\EntfernungsHelfer.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Enemy.cs">
+    <Compile Include="Models\Gegner.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ebenen\GegnerLogik.cs" />
     <Compile Include="Models\Schuss.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -64,7 +68,8 @@
     <Compile Include="Models\Turm.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Models\Weg.cs" />
+    <Compile Include="Ebenen\TurmLogik.cs" />
+    <Compile Include="Ebenen\WegLogik.cs" />
     <Compile Include="Models\WegStueck.cs">
       <SubType>Component</SubType>
     </Compile>
